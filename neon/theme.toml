@@ -1,0 +1,90 @@
+# Neon — synthwave after dark: ink-violet, hot-pink accent, cyan highlights, glowing edges. Full-screen lyrics on a gradient backdrop
+# built from the accent (not the artwork), centred, big glow, capsule controls.
+
+[meta]
+id = "neon"
+name = "Neon"
+extends = "blur"
+scheme = "dark"
+
+[colors]
+bg = "#0D0221"
+sidebar = "#08011A"
+raise = "#1A0B3B"
+hover = "#271254"
+fg = "#F4E9FF"
+dim = "#9C84D4"
+accent = "#FF2E97"
+accent_on = "#1A0010"
+play_bg = "#FF2E97"
+play_fg = "#1A0010"
+bar_bg = "#12053A"
+bar_fg = "#F4E9FF"
+toast_bg = "#271254"
+toast_fg = "#00F0FF"
+np_fg = "#FFFFFF"
+np_on = "#1A0010"
+
+[colors_alt]
+bg = "#F8F2FF"
+sidebar = "#EDE1FF"
+raise = "#FFFFFF"
+hover = "#E0CEFF"
+fg = "#25054D"
+dim = "#7656B0"
+accent = "#D4006E"
+accent_on = "#FFFFFF"
+play_bg = "#D4006E"
+play_fg = "#FFFFFF"
+bar_bg = "#FFFFFF"
+bar_fg = "#25054D"
+toast_bg = "#25054D"
+toast_fg = "#00F0FF"
+np_fg = "#25054D"
+np_on = "#FFFFFF"
+
+[fonts]
+ui = "Inter"
+mono = "JetBrainsMono Nerd Font Mono"
+fallbacks = ["Droid Arabic Kufi", "Noto Sans Arabic", "Noto Sans CJK JP", "Noto Color Emoji"]
+
+[shape]
+xs = 6
+sm = 8
+md = 10
+lg = 12
+input = 12
+xl = 16
+control = 9999
+cover = 12
+hero = 16
+
+[metrics]
+sidebar_w = 220
+track_row_h = 56
+label_tracking = 2.4
+
+[effects]
+ambient = 0.0
+bar_tint = 0.0
+
+[words]
+section_library = "LIBRARY"
+section_playlists = "PLAYLISTS"
+now = "Now playing"
+
+[lyrics]
+font = "ui"
+layout = "centered"
+align = "center"
+backdrop = "gradient"
+active_size = 52
+size = 32
+line_gap = 24
+blur = 1.0
+glow = 2.0
+spring = 1.3
+cascade = 0.04
+cover_radius = 14
+cover_shadow = true
+chrome = "capsule"

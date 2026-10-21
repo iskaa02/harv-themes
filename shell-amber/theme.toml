@@ -1,0 +1,43 @@
+# Shell Amber — the Shell theme in classic CRT amber-on-black. Everything else is inherited from Shell.
+
+[meta]
+id = "shell-amber"
+name = "Shell Amber"
+extends = "shell"
+scheme = "dark"
+
+[colors]
+bg = "#0F0B05"
+sidebar = "#0A0703"
+raise = "#1A130A"
+hover = "#271C0D"
+fg = "#FFE2B0"
+dim = "#9A7A45"
+accent = "#FFB000"
+accent_on = "#1A0F00"
+play_bg = "#FFB000"
+play_fg = "#1A0F00"
+bar_bg = "#0A0703"
+bar_fg = "#FFE2B0"
+toast_bg = "#271C0D"
+toast_fg = "#FFB000"
+np_fg = "#FFE9C4"
+np_on = "#1A0F00"
+
+[colors_alt]
+bg = "#FBF4E6"
+sidebar = "#F1E6CC"
+raise = "#FFFDF7"
+hover = "#EADBB8"
+fg = "#33230A"
+dim = "#8A6B33"
+accent = "#B36B00"
+accent_on = "#FFFFFF"
+play_bg = "#B36B00"
+play_fg = "#FFFFFF"
+bar_bg = "#FFFDF7"
+bar_fg = "#33230A"
+toast_bg = "#33230A"
+toast_fg = "#FFB000"
+np_fg = "#33230A"
+np_on = "#FBF4E6"

@@ -1,0 +1,201 @@
+# Vinyl — a warm record-shop look: cream paper and walnut, copper accent, IBM Plex Serif titles, round "pressed record" covers,
+# in-window now-playing with a spinning-disc-sized round cover. Light first, with a dark walnut variant.
+
+[meta]
+id = "vinyl"
+name = "Vinyl"
+extends = "blur"
+scheme = "light"
+
+[colors]
+bg = "#F6EEDD"
+sidebar = "#EBDFC6"
+raise = "#FFF9EC"
+hover = "#E4D5B6"
+fg = "#2B1D12"
+dim = "#85705A"
+accent = "#C2571A"
+accent_on = "#FFF6E8"
+play_bg = "#2B1D12"
+play_fg = "#F6EEDD"
+bar_bg = "#2B1D12"
+bar_fg = "#F6EEDD"
+toast_bg = "#2B1D12"
+toast_fg = "#F6EEDD"
+np_fg = "#2B1D12"
+np_on = "#F6EEDD"
+
+[colors_alt]
+bg = "#1A120C"
+sidebar = "#120C07"
+raise = "#251912"
+hover = "#33241A"
+fg = "#F3E6CF"
+dim = "#A08C74"
+accent = "#E8803A"
+accent_on = "#1A0E05"
+play_bg = "#E8803A"
+play_fg = "#1A0E05"
+bar_bg = "#251912"
+bar_fg = "#F3E6CF"
+toast_bg = "#33241A"
+toast_fg = "#F3E6CF"
+np_fg = "#F3E6CF"
+np_on = "#1A0E05"
+
+[fonts]
+ui = "IBM Plex Serif"
+mono = "IBM Plex Mono"
+fallbacks = ["Amiri", "Noto Sans Arabic", "Noto Sans CJK JP", "Noto Color Emoji"]
+
+[shape]
+xs = 6
+sm = 8
+md = 999
+lg = 14
+input = 16
+xl = 20
+control = 9999
+cover = 14
+hero = 9999
+
+[metrics]
+sidebar_w = 230
+track_row_h = 56
+label_tracking = 2.0
+
+[effects]
+ambient = 0.0
+bar_tint = 0.0
+
+[words]
+home = "Crate"
+search = "Search"
+charts = "Top Records"
+section_library = "THE SHELF"
+favorites = "Favorites"
+recent = "Recently spun"
+most_played = "Most played"
+playlists = "Mixtapes"
+following = "Following"
+downloads = "Downloads"
+preferences = "Preferences"
+queue = "Queue"
+section_playlists = "MIXTAPES"
+new_playlist = "New mixtape"
+now = "Now spinning"
+playlist_sub = "{n} songs"
+
+[shell.sidebar]
+style = "custom"
+items = ["home", "search", "charts", "section:section_library", "favorites", "recent", "most_played", "downloads", "playlists"]
+item_shape = "pill"
+brand = true
+playlist_art = "round"
+playlists_title = "section_playlists"
+new_playlist = true
+prefs = true
+
+[shell.bottom_bar]
+style = "parts"
+show = "except-now"
+height = 76
+
+[[shell.bottom_bar.parts]]
+c = "cover"
+size = 48
+round = true
+
+[[shell.bottom_bar.parts]]
+c = "title"
+width = 200
+
+[[shell.bottom_bar.parts]]
+c = "transport"
+buttons = ["prev", "play", "next"]
+play = "circle"
+play_size = 44
+size = 26
+
+[[shell.bottom_bar.parts]]
+c = "seek"
+style = "thin"
+times = true
+
+[page.library]
+main = [
+  { c = "hero", filters = ["all", "saved", "offline", "sort"], sort = "recent" },
+  { c = "cover-grid", shape = "round", columns = 5, cover = 170, badge = "none" },
+]
+
+[page.playlist]
+main = [
+  { c = "hero", cover = 240, meta = ["crossfade"] },
+  { c = "track-list", style = "rows", columns = ["index", "title", "artist", "time"] },
+]
+
+[shell.now_playing]
+host = "page"
+
+[page.now]
+right_w = 360
+
+[[page.now.main]]
+c = "column"
+grow = true
+margin_top = 30
+margin_start = 40
+margin_end = 40
+
+[[page.now.main.children]]
+c = "now-counter"
+
+[[page.now.main.children]]
+c = "column"
+valign = "center"
+vgrow = true
+gap = 18
+
+[[page.now.main.children.children]]
+c = "now-cover"
+size = 300
+radius = 150
+shadow = true
+
+[[page.now.main.children.children]]
+c = "now-title"
+size = 34
+sub_size = 16
+
+[[page.now.main.children.children]]
+c = "seek"
+style = "waveform"
+bar_width = 3
+bar_gap = 3
+wave_height = 44
+
+[[page.now.main.children.children]]
+c = "transport"
+class = "nowp-transport"
+size = 20
+play_size = 56
+
+[[page.now.right]]
+c = "text"
+text = "LYRICS · LINER NOTES"
+class = "nowp-section nowp-accent"
+margin_top = 28
+margin_start = 22
+margin_end = 22
+
+[[page.now.right]]
+c = "lyrics"
+font = 20
+active_font = 22
+gap = 16
+pad = 0
+vgrow = true
+margin_top = 18
+margin_start = 22
+margin_end = 22
+margin_bottom = 24

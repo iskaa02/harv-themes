@@ -1,0 +1,31 @@
+/* vinyl — raw CSS (no {{tokens}}; use @colors). Warm paper, grooves and copper. */
+
+.sidebar { background-color: @bg_side; border-right: 1px solid alpha(@fg, 0.08); }
+.nav-row { color: @fg_dim; padding: 8px 16px; }
+.nav-row:hover { background: alpha(@lib_accent, 0.10); color: @fg; }
+.nav-row:selected { background: @lib_accent; color: @accent_on; font-weight: 600; }
+.nav-row:selected image { color: @accent_on; }
+.nav-section { color: alpha(@fg, 0.45); font-style: italic; }
+
+.hero-title, .library-title { font-weight: 700; letter-spacing: -0.01em; font-style: italic; }
+.hero-art { border-radius: 9999px; box-shadow: 0 22px 50px alpha(#000, 0.35), 0 0 0 10px alpha(@fg, 0.88), 0 0 0 11px alpha(@lib_accent, 0.6); }
+.cover-grid .art { border-radius: 9999px; box-shadow: 0 10px 26px alpha(#000, 0.28), 0 0 0 5px alpha(@fg, 0.85); }
+.look-rows { border-bottom: 1px dashed alpha(@fg, 0.14); }
+.song-title.playing { color: @lib_accent; font-style: italic; }
+
+.themed-bar { border-top: none; }
+.themed-bar .bar-cover { border-radius: 9999px; box-shadow: 0 0 0 3px alpha(@bar_fg, 0.85); }
+.themed-bar .bar-title { font-style: italic; }
+
+.nowp-accent { color: @lib_accent; }
+.nowp-section { font-size: 11px; letter-spacing: 0.18em; }
+.nowp-title { font-weight: 700; font-style: italic; letter-spacing: -0.01em; }
+.nowp-cover { box-shadow: 0 30px 70px alpha(#000, 0.4), 0 0 0 16px alpha(@fg, 0.92), 0 0 0 17px alpha(@lib_accent, 0.7), 0 0 0 34px alpha(@fg, 0.07); }
+
+.s-box { background: @bg_raise; border: 1px solid alpha(@fg, 0.16); border-radius: 9999px; padding: 0 20px; min-height: 52px; }
+.s-box.focused { border-color: @lib_accent; }
+.s-chip { border-radius: 9999px; background: @bg_raise; border: 1px solid alpha(@fg, 0.16); color: @fg_dim; padding: 6px 14px; }
+.s-chip:checked { background: @lib_accent; color: @accent_on; border-color: transparent; }
+
+/* the search field stays a pill even though the shared input radius is softer */
+searchentry.lib-search { border-radius: 9999px; }

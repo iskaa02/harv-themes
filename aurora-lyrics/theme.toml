@@ -1,0 +1,68 @@
+# Aurora — full-screen lyrics, half artwork / half lyrics: a big rounded cover on the left, large Figtree lines on the right, all lit by the
+# artwork's own colours (cover backdrop + cover accent). Heavier glow, a softer blur falloff and a slow springy cascade set it apart from Blur.
+
+[meta]
+id = "aurora-lyrics"
+name = "Aurora"
+extends = "blur"
+scheme = "dark"
+
+[colors]
+bg = "#0C0A14"
+sidebar = "#08060F"
+raise = "#171325"
+hover = "#211B36"
+fg = "#F1ECFF"
+dim = "#9A90BD"
+accent = "cover"
+accent_on = "#0C0A14"
+play_bg = "#FFFFFF"
+play_fg = "#0C0A14"
+bar_bg = "#171325"
+bar_fg = "#F1ECFF"
+toast_bg = "#211B36"
+toast_fg = "#F1ECFF"
+np_fg = "#FFFFFF"
+np_on = "#0C0A14"
+
+[colors_alt]
+bg = "#F7F4FF"
+sidebar = "#EDE8FA"
+raise = "#FFFFFF"
+hover = "#E2DAF6"
+fg = "#1C1530"
+dim = "#6F6590"
+accent = "cover"
+accent_on = "#FFFFFF"
+play_bg = "#1C1530"
+play_fg = "#FFFFFF"
+bar_bg = "#FFFFFF"
+bar_fg = "#1C1530"
+toast_bg = "#1C1530"
+toast_fg = "#FFFFFF"
+np_fg = "#FFFFFF"
+np_on = "#0C0A14"
+
+[fonts]
+ui = "Figtree"
+fallbacks = ["IBM Plex Sans Arabic", "Noto Sans Arabic", "Noto Sans CJK JP", "Noto Color Emoji"]
+
+[shape]
+cover = 14
+hero = 20
+
+[lyrics]
+font = "ui"
+layout = "split"          # half artwork, half lyrics
+align = "start"
+backdrop = "cover"        # animated artwork colours fill the page
+active_size = 50
+size = 34
+line_gap = 30
+blur = 1.0
+glow = 1.2
+spring = 0.8
+cascade = 0.08
+cover_radius = 28
+cover_shadow = true
+chrome = "capsule"

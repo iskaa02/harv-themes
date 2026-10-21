@@ -1,0 +1,191 @@
+# Shell — a developer terminal: near-black, phosphor green, monospace everywhere, square corners, `$ command` vocabulary.
+
+[meta]
+id = "shell"
+name = "Shell"
+extends = "blur"
+scheme = "dark"
+
+[colors]
+bg = "#0B0F0C"
+sidebar = "#070A08"
+raise = "#111812"
+hover = "#17221A"
+fg = "#C9F2D2"
+dim = "#5E8A68"
+accent = "#33FF66"
+accent_on = "#02140A"
+play_bg = "#33FF66"
+play_fg = "#02140A"
+bar_bg = "#080C09"
+bar_fg = "#C9F2D2"
+toast_bg = "#17221A"
+toast_fg = "#33FF66"
+np_fg = "#D6FFE0"
+np_on = "#02140A"
+
+[colors_alt]
+bg = "#F1F7F2"
+sidebar = "#E3EEE5"
+raise = "#FAFFFB"
+hover = "#D3E4D7"
+fg = "#0E2A16"
+dim = "#4B6F55"
+accent = "#0B8A33"
+accent_on = "#FFFFFF"
+play_bg = "#0B8A33"
+play_fg = "#FFFFFF"
+bar_bg = "#FAFFFB"
+bar_fg = "#0E2A16"
+toast_bg = "#0E2A16"
+toast_fg = "#7CFF9E"
+np_fg = "#0E2A16"
+np_on = "#F1F7F2"
+
+[fonts]
+ui = "JetBrainsMono Nerd Font"
+mono = "JetBrainsMono Nerd Font Mono"
+fallbacks = ["Kawkab Mono", "Noto Sans Arabic", "Noto Sans CJK JP", "Noto Color Emoji"]
+
+[shape]
+xs = 2
+sm = 2
+md = 3
+lg = 3
+input = 3
+xl = 4
+control = 3
+cover = 2
+hero = 3
+
+[metrics]
+sidebar_w = 220
+track_row_h = 46
+label_tracking = 0.6
+
+[effects]
+ambient = 0.0
+bar_tint = 0.0
+
+[words]
+home = "~/home"
+search = "$ grep"
+charts = "$ top"
+section_library = "// LIBRARY"
+favorites = "liked.log"
+recent = "history.log"
+most_played = "top.log"
+playlists = "playlists/"
+following = "following/"
+downloads = "downloads/"
+preferences = "config"
+queue = "queue"
+section_playlists = "// PLAYLISTS"
+new_playlist = "mkdir $1"
+now = "now_playing"
+playlist_sub = "{n} files"
+
+# --- now playing: in-shell page (sidebar stays), cover + seek + queue on the left, synced lyrics on the right ---
+[shell.now_playing]
+host = "page"
+
+[shell.bottom_bar]
+style = "parts"
+show = "except-now"
+height = 68
+
+[[shell.bottom_bar.parts]]
+c = "cover"
+size = 40
+
+[[shell.bottom_bar.parts]]
+c = "title"
+width = 200
+
+[[shell.bottom_bar.parts]]
+c = "transport"
+buttons = ["prev", "play", "next", "radio"]
+play = "circle"
+play_size = 38
+size = 24
+
+[[shell.bottom_bar.parts]]
+c = "seek"
+style = "thin"
+times = true
+
+[page.now]
+right_w = 380
+
+[[page.now.main]]
+c = "column"
+grow = true
+margin_top = 24
+margin_start = 28
+margin_end = 28
+
+[[page.now.main.children]]
+c = "now-counter"
+
+[[page.now.main.children]]
+c = "row"
+gap = 22
+margin_top = 14
+
+[[page.now.main.children.children]]
+c = "now-cover"
+size = 220
+radius = 2
+shadow = false
+
+[[page.now.main.children.children]]
+c = "column"
+grow = true
+valign = "center"
+
+[[page.now.main.children.children.children]]
+c = "now-title"
+size = 30
+sub_size = 15
+
+[[page.now.main.children.children.children]]
+c = "seek"
+style = "bar"
+margin_top = 22
+
+[[page.now.main.children.children.children]]
+c = "transport"
+size = 20
+play_size = 48
+margin_top = 16
+
+[[page.now.main.children]]
+c = "text"
+text = "// QUEUE"
+class = "nowp-section nowp-accent"
+margin_top = 26
+
+[[page.now.main.children]]
+c = "queue-list"
+style = "rows"
+vgrow = true
+
+[[page.now.right]]
+c = "text"
+text = "// LYRICS --synced"
+class = "nowp-section nowp-accent"
+margin_top = 24
+margin_start = 22
+margin_end = 22
+
+[[page.now.right]]
+c = "lyrics"
+font = 18
+active_font = 20
+gap = 14
+pad = 0
+vgrow = true
+margin_top = 18
+margin_start = 22
+margin_end = 22
+margin_bottom = 20
