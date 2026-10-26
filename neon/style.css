@@ -1,26 +1,29 @@
-/* neon — raw CSS (no {{tokens}}; use @colors). Glowing edges: accent pink + cyan. */
+/* neon — templated CSS ({{tokens}}, your [vars] and @colors). Glowing edges: accent pink + cyan. */
 
-.sidebar { background-color: @bg_side; background-image: linear-gradient(180deg, alpha(@lib_accent, 0.14), alpha(@lib_accent, 0) 45%); border-right: 1px solid alpha(@lib_accent, 0.35); box-shadow: 1px 0 18px alpha(@lib_accent, 0.2); }
+.sidebar { background-color: @bg_side; background-image: linear-gradient(180deg, alpha(@lib_accent, 0.14), alpha(@lib_accent, 0) 45%); border-right: {{border_w}}px solid alpha(@lib_accent, 0.35); box-shadow: 1px 0 18px alpha(@lib_accent, 0.2); }
 .nav-row { color: @fg_dim; }
-.nav-row:hover { background: alpha(@lib_accent, 0.10); color: @fg; }
+.nav-row:hover { background: alpha(@lib_accent, {{st:0.10}}); color: @fg; }
 .nav-row:selected { background: alpha(@lib_accent, 0.18); color: @lib_accent; font-weight: 700; box-shadow: inset 0 0 0 1px alpha(@lib_accent, 0.6), 0 0 14px alpha(@lib_accent, 0.35); }
 .nav-row:selected image { color: @lib_accent; }
-.nav-section { color: #00F0FF; text-shadow: 0 0 8px alpha(#00F0FF, 0.7); }
+.nav-section { color: {{cyan}}; text-shadow: 0 0 8px alpha({{cyan}}, 0.7); }
 
 .hero-title, .library-title { font-weight: 800; letter-spacing: -0.02em; text-shadow: 0 0 22px alpha(@lib_accent, 0.55); }
-.hero-art { box-shadow: 0 0 0 1px alpha(@lib_accent, 0.7), 0 0 40px alpha(@lib_accent, 0.4), 0 0 90px alpha(#00F0FF, 0.15); }
+.hero-art { box-shadow: 0 0 0 1px alpha(@lib_accent, 0.7), 0 0 40px alpha(@lib_accent, 0.4), 0 0 90px alpha({{cyan}}, 0.15); }
 .song-title.playing { color: @lib_accent; text-shadow: 0 0 12px alpha(@lib_accent, 0.7); }
-.track-row:hover { background: alpha(@lib_accent, 0.08); box-shadow: inset 0 0 0 1px alpha(@lib_accent, 0.4); }
+.track-row:hover { background: alpha(@lib_accent, {{st:0.08}}); box-shadow: inset 0 0 0 1px alpha(@lib_accent, 0.4); }
 
 searchentry.lib-search { background: alpha(@lib_accent, 0.08); box-shadow: inset 0 0 0 1px alpha(@lib_accent, 0.35); }
 searchentry.lib-search:focus-within { box-shadow: inset 0 0 0 1.5px @lib_accent, 0 0 18px alpha(@lib_accent, 0.5); }
 
-.themed-bar, .mini-bar { border-top: 1px solid alpha(@lib_accent, 0.6); box-shadow: 0 -8px 26px alpha(@lib_accent, 0.18); }
-.themed-bar scale.bar-seek highlight { background: linear-gradient(90deg, @lib_accent, #00F0FF); box-shadow: 0 0 10px alpha(@lib_accent, 0.7); }
+.themed-bar, .mini-bar { border-top: {{border_w}}px solid alpha(@lib_accent, 0.6); box-shadow: 0 -8px 26px alpha(@lib_accent, 0.18); }
+.themed-bar scale.bar-seek highlight { background: linear-gradient(90deg, @lib_accent, {{cyan}}); box-shadow: 0 0 10px alpha(@lib_accent, 0.7); }
+
+/* right panel (page.home) */
+.right-panel { padding: 20px 18px; border-left: {{border_w}}px solid alpha(@lib_accent, 0.35); }
 
 /* full-screen lyrics chrome */
 .np-capsule .np-controls { background-color: alpha(@lib_accent, 0.2); border: 1px solid alpha(@lib_accent, 0.7); border-radius: 9999px; padding: 4px 14px; box-shadow: 0 0 22px alpha(@lib_accent, 0.4); }
-.np-capsule .np-header button { background-color: alpha(@lib_accent, 0.2); border: 1px solid alpha(#00F0FF, 0.5); border-radius: 9999px; }
+.np-capsule .np-header button { background-color: alpha(@lib_accent, 0.2); border: 1px solid alpha({{cyan}}, 0.5); border-radius: 9999px; }
 .np-capsule .np-header windowcontrols button { background-color: transparent; border: none; border-radius: 0; }
 .np-controls .play-btn { box-shadow: 0 0 26px alpha(@lib_accent, 0.8); }
-.np-time { font-family: "JetBrainsMono Nerd Font Mono", monospace; color: #00F0FF; }
+.np-time { font-family: {{font_mono}}; color: {{cyan}}; }

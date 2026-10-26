@@ -1,4 +1,4 @@
-/* aurora — raw CSS (no {{tokens}}; use @colors). Full-screen lyrics chrome tinted by the artwork accent. */
+/* aurora — templated CSS ({{tokens}} and @colors). Full-screen lyrics chrome tinted by the artwork accent. */
 
 .np-capsule .np-controls { background-color: alpha(@lib_accent, 0.22); border: 1px solid alpha(@lib_accent, 0.45); border-radius: 9999px; padding: 4px 14px; }
 .np-capsule .np-header button { background-color: alpha(@lib_accent, 0.22); border: 1px solid alpha(@lib_accent, 0.35); border-radius: 9999px; }

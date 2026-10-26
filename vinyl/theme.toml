@@ -49,15 +49,15 @@ mono = "IBM Plex Mono"
 fallbacks = ["Amiri", "Noto Sans Arabic", "Noto Sans CJK JP", "Noto Color Emoji"]
 
 [shape]
-xs = 6
-sm = 8
 md = 999
 lg = 14
 input = 16
 xl = 20
-control = 9999
 cover = 14
 hero = 9999
+
+[shape.component]
+chip = 9999
 
 [metrics]
 sidebar_w = 230
@@ -68,23 +68,16 @@ label_tracking = 2.0
 ambient = 0.0
 bar_tint = 0.0
 
-[words]
+[words]               # only what differs from Blur
 home = "Crate"
 search = "Search"
 charts = "Top Records"
 section_library = "THE SHELF"
-favorites = "Favorites"
 recent = "Recently spun"
-most_played = "Most played"
 playlists = "Mixtapes"
-following = "Following"
-downloads = "Downloads"
-preferences = "Preferences"
-queue = "Queue"
 section_playlists = "MIXTAPES"
 new_playlist = "New mixtape"
 now = "Now spinning"
-playlist_sub = "{n} songs"
 
 [shell.sidebar]
 style = "custom"
@@ -132,6 +125,22 @@ main = [
 main = [
   { c = "hero", cover = 240, meta = ["crossfade"] },
   { c = "track-list", style = "rows", columns = ["index", "title", "artist", "time"] },
+]
+
+# Home: what you spun lately as a shelf of records, the rest as rows.
+[page.home]
+main = [
+  { c = "heading" },
+  { c = "shelf", key = "recent", style = "grid", columns = 6, limit = 6 },
+  { c = "shelves", style = "row" },
+]
+
+# Artist: the same record-sleeve header as a playlist.
+[page.artist]
+main = [
+  { c = "hero", cover = 240 },
+  { c = "track-list", style = "rows", columns = ["index", "title", "artist", "time"] },
+  { c = "shelves", style = "row" },
 ]
 
 [shell.now_playing]

@@ -1,4 +1,5 @@
 # Shell — a developer terminal: near-black, phosphor green, monospace everywhere, square corners, `$ command` vocabulary.
+# Palette variants: Green (default) and Amber (classic CRT) — pick one on the theme's card.
 
 [meta]
 id = "shell"
@@ -59,13 +60,17 @@ cover = 2
 hero = 3
 
 [metrics]
-sidebar_w = 220
 track_row_h = 46
 label_tracking = 0.6
+
+[shape.component]
+nav = 2                  # sidebar rows
+search = 2               # search fields
 
 [effects]
 ambient = 0.0
 bar_tint = 0.0
+motion = 0.3             # a terminal doesn't ease: near-instant transitions
 
 [words]
 home = "~/home"
@@ -84,6 +89,52 @@ section_playlists = "// PLAYLISTS"
 new_playlist = "mkdir $1"
 now = "now_playing"
 playlist_sub = "{n} files"
+
+# --- palette variants ---
+[variants.amber]
+name = "Amber"
+[variants.amber.colors]
+bg = "#0F0B05"
+sidebar = "#0A0703"
+raise = "#1A130A"
+hover = "#271C0D"
+fg = "#FFE2B0"
+dim = "#9A7A45"
+accent = "#FFB000"
+accent_on = "#1A0F00"
+play_bg = "#FFB000"
+play_fg = "#1A0F00"
+bar_bg = "#0A0703"
+bar_fg = "#FFE2B0"
+toast_bg = "#271C0D"
+toast_fg = "#FFB000"
+np_fg = "#FFE9C4"
+np_on = "#1A0F00"
+[variants.amber.colors_alt]
+bg = "#FBF4E6"
+sidebar = "#F1E6CC"
+raise = "#FFFDF7"
+hover = "#EADBB8"
+fg = "#33230A"
+dim = "#8A6B33"
+accent = "#B36B00"
+accent_on = "#FFFFFF"
+play_bg = "#B36B00"
+play_fg = "#FFFFFF"
+bar_bg = "#FFFDF7"
+bar_fg = "#33230A"
+toast_bg = "#33230A"
+toast_fg = "#FFB000"
+np_fg = "#33230A"
+np_on = "#FBF4E6"
+
+# --- home: the queue as a `// QUEUE` panel beside the shelves (hidden in narrow windows) ---
+[page.home]
+right_w = 300
+right = [
+  { c = "text", text = "// QUEUE", class = "nowp-section nowp-accent" },
+  { c = "queue-list", limit = 8 },
+]
 
 # --- now playing: in-shell page (sidebar stays), cover + seek + queue on the left, synced lyrics on the right ---
 [shell.now_playing]

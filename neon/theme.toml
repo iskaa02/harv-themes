@@ -1,6 +1,9 @@
 # Neon — synthwave after dark: ink-violet, hot-pink accent, cyan highlights, glowing edges. Full-screen lyrics on a gradient backdrop
 # built from the accent (not the artwork), centred, big glow, capsule controls.
 
+[vars]
+cyan = "#00F0FF"          # the highlight colour, used as {{cyan}} in style.css
+
 [meta]
 id = "neon"
 name = "Neon"
@@ -44,34 +47,21 @@ np_fg = "#25054D"
 np_on = "#FFFFFF"
 
 [fonts]
-ui = "Inter"
 mono = "JetBrainsMono Nerd Font Mono"
 fallbacks = ["Droid Arabic Kufi", "Noto Sans Arabic", "Noto Sans CJK JP", "Noto Color Emoji"]
 
-[shape]
-xs = 6
-sm = 8
-md = 10
-lg = 12
+[shape]               # (the rest is inherited from Blur)
 input = 12
-xl = 16
-control = 9999
 cover = 12
 hero = 16
 
 [metrics]
-sidebar_w = 220
 track_row_h = 56
 label_tracking = 2.4
 
 [effects]
 ambient = 0.0
 bar_tint = 0.0
-
-[words]
-section_library = "LIBRARY"
-section_playlists = "PLAYLISTS"
-now = "Now playing"
 
 [lyrics]
 font = "ui"
@@ -88,3 +78,11 @@ cascade = 0.04
 cover_radius = 14
 cover_shadow = true
 chrome = "capsule"
+
+# Home: the queue as an UP NEXT panel beside the shelves (hidden in narrow windows).
+[page.home]
+right_w = 300
+right = [
+  { c = "text", text = "UP NEXT", class = "panel-label" },
+  { c = "queue-list", limit = 6 },
+]
